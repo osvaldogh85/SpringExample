@@ -56,7 +56,7 @@
 										cssErrorClass="form-control alert-danger" />
 									<form:errors path="nickName" />
 								</div>
-							</div>					
+							</div>						
 							
 
 							<div class="form-group">
