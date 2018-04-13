@@ -1,22 +1,17 @@
 package com.practice.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.practice.domain.SuggestedNick;
 import com.practice.domain.User;
 import com.practice.domain.validators.UserValidator;
 import com.practice.repository.database.IUserDAO;
@@ -25,8 +20,7 @@ import com.practice.repository.database.IUserDAO;
 @RequestMapping(value = "/user")
 public class ControllerUser {
 
-	@Autowired
-	private User usuario;
+	
 	@Autowired
 	@Qualifier("daoMock")	
 	private IUserDAO dao;
@@ -79,14 +73,6 @@ public class ControllerUser {
 	}
 
 	
-	public User getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(User usuario) {
-		this.usuario = usuario;
-	}
-
 	public IUserDAO getDao() {
 		return dao;
 	}
@@ -94,5 +80,6 @@ public class ControllerUser {
 	public void setDao(IUserDAO dao) {
 		this.dao = dao;
 	}
+
 
 }
