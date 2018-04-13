@@ -38,7 +38,7 @@ public class ControllerUser {
 
 	@RequestMapping( method = RequestMethod.GET)
 	public ModelAndView crearUser() {
-		ModelAndView model =  new ModelAndView("form-user");
+		ModelAndView model =  new ModelAndView("user");
 		model.addObject("user", new User("",""));
 		return model;
 	}
@@ -47,31 +47,31 @@ public class ControllerUser {
 	public ModelAndView validateUser(@Valid User user, BindingResult result) {
 		ModelAndView model = null;
 		if (result.hasErrors()) {
-			return  new ModelAndView("form-user");
+			return  new ModelAndView("user");
 		}
 
 		try {
 			if (dao.validateUser(user)) {
 				if (dao.existsUserAsRestrictedName(user)) {
 					user.setSuggestedNames(dao.getSuggestedNames(user));
-					model = new ModelAndView("form-suggestednames");
+					model = new ModelAndView("suggestednames");
 					model.addObject("list", user.getSuggestedNames());
 					model.addObject("name", user.getFullName());
 					return model;
 				}else {
-					model =  new ModelAndView("form-user");
+					model =  new ModelAndView("user");
 					model.addObject("message", "User Name entered have restricted words");
 					return model;
 				}
 			}else {
 				
-				model =  new ModelAndView("form-user");
+				model =  new ModelAndView("user");
 				model.addObject("message", "User Name is available for use");
 				return model;
 			}
 
 		} catch (Exception e) {
-			model =  new ModelAndView("form-user");
+			model =  new ModelAndView("user");
 			model.addObject("message", "Proccessing error at webpage, Try again");
 			return model;
 		}
