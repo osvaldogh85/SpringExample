@@ -17,11 +17,7 @@
 
 	<div class="container">
 
-		<ul class="nav nav-tabs">
-			<li role="presentation"><a href="?locale=en_us">us</a></li>
-			<li role="presentation" class="active"><a href="?locale=es_es">es</a></li>
-			<li role="presentation"><a href="?locale=de_de">de</a></li>
-		</ul>
+		
 
 		<div class="page-header">
 			<h1>
