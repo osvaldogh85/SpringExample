@@ -8,7 +8,7 @@
 </head>
 <body>
    <h2>
-   <span class="label table-striped label-primary">User : {name}</span>
+   <span class="label table-striped label-primary">User : ${name}</span>
 		</h2>
 		<table class="table table-hover">
 			<thead>
