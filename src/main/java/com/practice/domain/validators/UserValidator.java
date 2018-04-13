@@ -15,8 +15,11 @@ public class UserValidator implements Validator{
 	}
 
 	public void validate(Object target, Errors errors) {		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre",
-				"required.nombre", "nombre es requerido");	
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nickName",
+				"required.nickName", "Nick name is required");	
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "fullName",
+				"required.fullName", "Full Name name is required");	
 	}
 	
 }
